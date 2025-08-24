@@ -221,14 +221,6 @@ The 3D scenes are built using React Three Fiber. Key development files:
 - Three.js stats panel for 3D performance
 - Lighthouse for overall performance metrics
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
 ## 📄 License
 
 This project is private and proprietary to GrooveWash.
