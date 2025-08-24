@@ -1,0 +1,244 @@
+/* WaiverForm.css */
+
+/* Container that sits inside the animated modal */
+.waiver-form-container {
+  width: 100%;
+  height: 100%; /* Take full height of the animated parent */
+  display: flex; /* Use flex to help center the content wrapper */
+  flex-direction: column; /* Stack close button and content wrapper */
+  color: #fff;
+  align-items: center; /* Center content wrapper horizontally */
+  justify-content: center; /* Center content wrapper vertically */
+  padding: 40px 20px 20px 20px; /* Add padding top for close button, sides, bottom */
+  box-sizing: border-box; /* Include padding in width/height */
+  position: relative; /* Needed for absolute positioning of close button */
+  overflow: hidden; /* Hide anything that might overflow during animation */
+}
+
+/* Close button positioning */
+.waiver-close-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 28px; /* Slightly larger */
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  line-height: 30px; /* Center the 'x' */
+  text-align: center;
+  z-index: 10; /* Above other form content */
+}
+
+.waiver-close-button:hover {
+  color: gold;
+}
+
+/* Wrapper for the two columns */
+.form-content-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%; /* Fill the container height */
+  max-width: 900px; /* Max width for the two-column layout */
+  margin: 0 auto; /* Center if container is wider */
+  gap: 30px; /* Space between the columns */
+  align-items: center; /* Vertically align column content */
+  justify-content: center; /* Horizontally distribute space */
+}
+
+/* Left Column Styling */
+.left-column {
+  flex: 1 1 40%; /* Flex grow, shrink, basis (adjust basis %) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  padding-right: 15px; /* Add some padding if gap isn't enough */
+  height: 100%; /* Try to take full height */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.left-column h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-align: left; /* Align text to the left */
+  margin-top: 0; /* Reset margin */
+}
+
+.left-column p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: left; /* Align text to the left */
+  max-width: 100%; /* Use available width */
+  /* Remove paddingLeft from inline style */
+  margin-bottom: 0; /* Reset margin */
+}
+
+/* Right Column (Form) Styling */
+.right-column {
+  flex: 1 1 55%; /* Flex grow, shrink, basis (adjust basis %) */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center form elements horizontally */
+  justify-content: center; /* Center form elements vertically */
+  padding-left: 15px; /* Add some padding if gap isn't enough */
+  height: 100%; /* Try to take full height */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  /* Remove styles previously on .waiver-form if they conflict */
+}
+
+/* General Form Group Styling (used in right column) */
+.form-group {
+  margin-bottom: 18px; /* Increased spacing */
+  width: 100%;
+  max-width: 320px; /* Max width for inputs */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center label/input */
+  /* Removed padding-left */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+  width: 100%;
+  padding: 10px; /* Slightly larger padding */
+  border: 1px solid #ccc; /* Lighter border */
+  border-radius: 4px;
+  color: #333;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* Signature Specific Group */
+.signature-group {
+  /* Inherits form-group styles, add specifics if needed */
+   margin-bottom: 10px; /* Less margin below signature */
+}
+
+.signature-canvas {
+  border: 1px solid #ccc; /* Lighter border */
+  background-color: #fff;
+  border-radius: 4px;
+  width: 100%; /* Takes width of form-group max-width */
+  height: 120px;
+  box-sizing: border-box;
+  cursor: crosshair;
+}
+
+.clear-button {
+  margin-top: 10px; /* More space above clear */
+  padding: 6px 16px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #555; /* Darker text */
+  align-self: center;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.clear-button:hover {
+  background-color: #e0e0e0;
+}
+
+.error-message {
+  color: #ff6b6b;
+  margin-top: 0; /* Reduced top margin */
+  margin-bottom: 15px; /* Space before submit */
+  font-weight: bold;
+  width: 100%;
+  max-width: 320px; /* Match input width */
+  text-align: center;
+}
+
+.submit-button {
+  padding: 12px 25px; /* Larger button */
+  background-color: #4dabf7;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px; /* Adjusted margin */
+  align-self: center;
+  min-width: 160px;
+  font-size: 1.1rem; /* Larger font */
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #339af0;
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 767px) {
+  .waiver-form-container {
+     padding: 40px 15px 15px 15px; /* Adjust padding */
+  }
+
+  .form-content-wrapper {
+    flex-direction: column; /* Stack columns */
+    gap: 15px; /* Reduce gap when stacked */
+    align-items: center; /* Center columns when stacked */
+    height: auto; /* Allow height to adjust to content */
+    overflow-y: auto; /* Allow scrolling for the whole wrapper */
+    max-width: 100%; /* Use full available width */
+  }
+
+  .left-column,
+  .right-column {
+    flex-basis: auto; /* Reset flex basis */
+    width: 100%; /* Make columns full width */
+    max-width: 350px; /* Limit max width on mobile */
+    padding: 0; /* Remove padding between columns */
+    height: auto; /* Allow height to adjust */
+    overflow-y: visible; /* Disable internal scrolling */
+  }
+
+  .left-column {
+    text-align: center; /* Center text in left column on mobile */
+    order: 1; /* Ensure title/desc comes first */
+  }
+
+  .right-column {
+     order: 2; /* Ensure form comes second */
+     padding-top: 15px; /* Add space above form when stacked */
+  }
+
+  .left-column h2 {
+    font-size: 1.5rem; /* Adjust font size */
+    text-align: center;
+  }
+
+  .left-column p {
+    font-size: 0.9rem; /* Adjust font size */
+    text-align: center;
+  }
+
+  .form-group,
+  .error-message {
+    max-width: 90%; /* Allow slightly wider inputs */
+  }
+
+  .signature-canvas {
+     height: 100px; /* Slightly smaller canvas */
+  }
+
+  .submit-button {
+     padding: 10px 20px;
+     font-size: 1rem;
+  }
+}

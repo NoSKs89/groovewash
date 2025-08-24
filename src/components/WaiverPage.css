@@ -1,0 +1,52 @@
+/* src/components/WaiverPage/WaiverPage.css */
+.waiver-page-container {
+    display: flex;
+    flex-direction: column; /* Stack home button above form content */
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top */
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: black; /* Optional: background for the whole page */
+  }
+  
+  .home-button {
+    position: absolute; /* Position relative to the viewport or a positioned ancestor */
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    z-index: 1001; /* Ensure it's above other content if necessary */
+  }
+  
+  .home-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .waiver-page-content {
+    color: black;
+    width: 100%;
+    max-width: 1100px; /* Max width for the waiver form content area */
+    margin-top: 60px; /* Space below the home button */
+    background-color: teal; /* Background for the content area if needed */
+    padding: 20px; /* Padding inside the content area */
+    border-radius: 8px; /* Optional: rounded corners for the content area */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for the content area */
+  }
+  
+  /*
+    Ensure that the WaiverForm itself takes up the necessary space
+    and its internal styling works within this .waiver-page-content
+
+    padding is funky on player
+    reduce rate to 50$ for LP
+  */
+
+
+  

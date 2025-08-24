@@ -1,0 +1,214 @@
+/* Base container styling */
+.credits-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  align-items: center;
+  justify-content: flex-start; 
+  overflow: hidden;
+  padding-top: 50px; /* Space for the title and close button */
+  position: relative; /* For absolute positioning of the close button */
+}
+
+/* Content area for scrolling */
+.credits-content {
+  width: 100%;
+  max-width: 90%; /* Prevent content from touching edges */
+  overflow-y: auto; /* Allow scrolling for content */
+  padding: 0 25px 25px 25px; /* Padding around content */
+  text-align: left;
+  flex-grow: 1; /* Allow content to take available space */
+
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari, new Edge) */
+  .credits-content::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none;
+  /* Hide scrollbar for IE and Edge (older versions) */
+  -ms-overflow-style: none;
+}
+
+/* Title styling */
+.credits-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  margin-top: 0; /* Reset default margin */
+  width: 100%;
+}
+
+/* Sub-header styling */
+.credits-sub-header {
+  font-size: 1.3rem;
+  margin-top: 20px; /* Space above sub-headers */
+  margin-bottom: 10px;
+  color: #eee;
+  border-bottom: 1px solid #666;
+  padding-bottom: 5px;
+  width: 100%; /* Ensure it spans width */
+  text-align: left; /* Align with paragraphs/lists */
+}
+
+/* Paragraph styling */
+.credits-paragraph {
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Smaller text variant for blurbs */
+.credits-paragraph.small-text {
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+/* List styling */
+.credits-list {
+  list-style: none; /* Remove default bullets */
+  padding-left: 5px; /* Slight indent */
+  margin-bottom: 20px; /* Space after lists */
+}
+
+.credits-list li {
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.credits-list li strong {
+  color: #eee; /* Make labels slightly brighter */
+}
+
+/* Link styling */
+.credits-list.links li {
+    margin-bottom: 10px; /* More space between links */
+}
+
+.credits-link {
+  color: #87CEFA; /* Light Sky Blue */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.credits-link:hover {
+  color: gold;
+  text-decoration: underline;
+}
+
+/* Social Icon Specific List Styling */
+.credits-list.social-icons {
+  display: flex; /* Arrange icons horizontally */
+  justify-content: center; /* Center the icons */
+  gap: 20px; /* Space between icons */
+  margin-top: 15px; /* Space above the icon list */
+  padding-left: 0; /* Remove default list padding */
+}
+
+.credits-list.social-icons li {
+  margin-bottom: 0; /* Remove bottom margin for flex items */
+}
+
+/* Optional: Style for the icon links themselves if needed - REMOVED as styles are on component now */
+/*
+.credits-link.icon-link {
+  font-size: 1.5rem; 
+  
+}
+*/
+
+/* Close button styling */
+.credits-close-button {
+  margin-top: 20px !important; /* Override potential other styles */
+  align-self: flex-end; /* Keep it within the container flow if not absolute */
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute; /* Position relative to .credits-container */
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  width: 30px; /* Specific size for the button */
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5; /* Ensure it's above other content within the modal */
+}
+
+.credits-close-button:hover {
+  color: gold;
+}
+
+/* --- Mobile Adjustments --- */
+@media (max-width: 767px) {
+  .credits-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  .credits-paragraph {
+    font-size: 0.85rem;
+  }
+}
+
+/* --- NEW: Container for the two link columns --- */
+.website-links-container {
+  display: flex;
+  justify-content: space-around; /* Distribute space more evenly */
+  align-items: center; /* Align columns vertically center */
+  gap: 20px; 
+  margin-top: 15px; 
+}
+
+/* Styling for the direct children (columns) of the container */
+.website-links-container > * {
+  flex: 1; /* Each column takes up equal width */
+  display: flex;
+  flex-direction: column; /* Stack content vertically within each column */
+  align-items: center; /* Center content horizontally within each column */
+}
+
+/* Social Icon Specific List Styling (adjustments for flex context) */
+.credits-list.social-icons {
+  display: flex; 
+  justify-content: center; 
+  flex-direction: row; /* Icons in a row */
+  align-items: center; 
+  padding-left: 0; 
+  width: 100%; /* Make the ul take full width of its column */
+  gap: 15px; /* Reduced gap for icons */
+}
+
+.credits-list.social-icons li {
+  margin-bottom: 0; 
+}
+
+/* Standard links list adjustments */
+.website-links-container .credits-list.links:not(.social-icons) {
+  padding-left: 0; /* Reset padding, alignment handled by parent column */
+  width: auto; /* Allow the list to size based on its content */
+  text-align: center; /* Center the link text */
+}
+
+/* --- NEW: Styling for the subtitle above links --- */
+.credits-link-subtitle {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 8px; 
+  font-weight: normal;
+  text-align: center; /* Center the subtitle */
+  width: 100%; /* Ensure it takes the width of its column section */
+}
+
+/* Optional: Style for the icon links themselves if needed - REMOVED as styles are on component now */
+/*
+.credits-link.icon-link {
+  font-size: 1.5rem; 
+  
+}
+*/ 

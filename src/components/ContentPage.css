@@ -1,0 +1,86 @@
+/* src/components/ContentPage.css */
+.content-page-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: sans-serif;
+  color: #333;
+}
+
+.content-page-nav {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.content-page-nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.content-page-nav a:hover {
+  text-decoration: underline;
+}
+
+.content-page-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.content-page-header h1 {
+  font-size: 2.5em;
+  color: #222;
+}
+
+.content-page-section {
+  margin-bottom: 30px;
+}
+
+.content-page-section h2 {
+  font-size: 1.8em;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.content-page-section p,
+.content-page-section ul,
+.faq-item-content p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.content-page-section ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.faq-list .faq-item-content {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+}
+
+.faq-list .faq-item-content h3 {
+  font-size: 1.3em;
+  color: #0056b3;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.content-page-footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  font-size: 0.9em;
+  color: #777;
+} 
